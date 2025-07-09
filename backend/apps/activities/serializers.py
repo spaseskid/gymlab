@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from apps.activities.models import *
-from apps.users.serializers import UserSerializer
+from backend.apps.activities.models import *
+from backend.apps.users.serializers import UserSerializer
 
 
 class ExtraActivitySerializer(serializers.ModelSerializer):

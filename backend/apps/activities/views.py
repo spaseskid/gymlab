@@ -2,8 +2,8 @@ from django.shortcuts import render
 from rest_framework import viewsets, permissions
 from rest_framework.exceptions import PermissionDenied
 
-from apps.activities.models import ExtraActivity, ExtraActivityRegistration
-from apps.activities.serializers import ExtraActivitySerializer, ExtraActivityRegistrationSerializer
+from backend.apps.activities.models import ExtraActivity, ExtraActivityRegistration
+from backend.apps.activities.serializers import ExtraActivitySerializer, ExtraActivityRegistrationSerializer
 
 
 # Create your views here.

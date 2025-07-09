@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from apps.activities.views import *
+from backend.apps.activities.views import *
 
 router = DefaultRouter()
 router.register(r'registration', ExtraActivityRegistrationViewSet, basename='registration')

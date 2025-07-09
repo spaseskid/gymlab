@@ -5,11 +5,11 @@ from django.shortcuts import render
 from rest_framework import viewsets, permissions, mixins
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from apps.workouts.models import WorkoutSession
+from backend.apps.workouts.models import WorkoutSession
 
-from apps.users.models import User, Goal
-from apps.users.serializers import UserSerializer
-from apps.workouts.serializers import WorkoutSessionSerializer
+from backend.apps.users.models import User, Goal
+from backend.apps.users.serializers import UserSerializer
+from backend.apps.workouts.serializers import WorkoutSessionSerializer
 
 
 # Create your views here.

@@ -2,8 +2,8 @@ from django.shortcuts import render
 from rest_framework import viewsets, permissions
 from rest_framework.exceptions import PermissionDenied
 
-from apps.workouts.models import *
-from apps.workouts.serializers import *
+from backend.apps.workouts.models import *
+from backend.apps.workouts.serializers import *
 # Create your views here.
 
 class IsCurrentOrStaff(permissions.BasePermission):

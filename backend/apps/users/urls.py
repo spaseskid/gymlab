@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from apps.users.views import UserViewSet, DashboardView
+from backend.apps.users.views import UserViewSet, DashboardView
 
 router = DefaultRouter()
 router.register(r'', UserViewSet, basename='users')

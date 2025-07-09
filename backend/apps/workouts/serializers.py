@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from apps.workouts.models import *
+from backend.apps.workouts.models import *
 
 class ExerciseSerializer(serializers.ModelSerializer):
     class Meta:
