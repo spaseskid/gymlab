@@ -9,7 +9,7 @@ from apps.workouts.serializers import *
 class IsCurrentOrStaff(permissions.BasePermission):
     def has_permission(self, request, view):
         if request.method in permissions.SAFE_METHODS:
-            return True
+            return request.user and request.user.is_authenticated
         return request.user.is_staff or request.user.is_superuser or request.user.role in ['coach','employee']
 
 
@@ -37,6 +37,13 @@ class WorkoutSessionViewSet(viewsets.ModelViewSet):
             serializer.save()
         else:
             raise PermissionDenied('You do not have permission to perform this action')
+
+    def destroy(self, request, *args, **kwargs):
+        user = request.user
+        if user.is_staff or user.is_superuser or user.role in ['coach','employee']:
+            return super().destroy(request, *args, **kwargs)
+        raise PermissionDenied("You cannot delete workout sessions.")
+
 
 
 

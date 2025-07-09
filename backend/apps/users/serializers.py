@@ -3,6 +3,8 @@ from apps.users.models import User, Goal
 
 
 class UserSerializer(serializers.ModelSerializer):
+    goal = serializers.PrimaryKeyRelatedField(many=True, queryset=Goal.objects.all())
+
     class Meta:
         model = User
         fields = [
@@ -16,7 +18,4 @@ class UserSerializer(serializers.ModelSerializer):
         read_only_fields = ['member_id', 'subscription_start', 'subscription_end', 'subscription_type']
 
 
-class GoalSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Goal
-        fields = ['id', 'key', 'name']
+
